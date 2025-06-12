@@ -1,0 +1,187 @@
+cd  C:\Users\chuongnq3\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\System Tools
+curl -X POST https://api.openai.com/v1/assistants ^
+ -H "Authorization: Bearer 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" ^
+ -H "Content-Type: application/json" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ --data "@assistant.json" ^
+ --ssl-no-revoke
+
+ C:\Users\chuongnq3\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\System Tools>curl -X POST https://api.openai.com/v1/assistants ^
+More?  -H "Authorization: Bearer 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" ^
+More?  -H "Content-Type: application/json" ^
+More?  -H "OpenAI-Beta: assistants=v2" ^
+More?  --data "@assistant.json" ^
+More?  --ssl-no-revoke
+{
+  "id": "asst_ZRPcnjQrPo38gbph1YHXDknt",
+  "object": "assistant",
+  "created_at": 1749460270,
+  "name": "Trợ lý MSB",
+  "description": null,
+  "model": "gpt-4o-mini",
+  "instructions": "Bạn là trợ lý AI của ngân hàng MSB. Luôn ưu tiên trả lời dựa trên tài liệu đã tải lên.",
+  "tools": [
+    {
+      "type": "file_search",
+      "file_search": {
+        "ranking_options": {
+          "ranker": "default_2024_08_21",
+          "score_threshold": 0.0
+        }
+      }
+    }
+  ],
+  "top_p": 1.0,
+  "temperature": 1.0,
+  "reasoning_effort": null,
+  "tool_resources": {
+    "file_search": {
+      "vector_store_ids": []
+    }
+  },
+  "metadata": {},
+  "response_format": "auto"
+}
+
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\1.docx"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-Qpo1C7bghFKXPC3P5EMDNC",
+  "purpose": "assistants",
+  "filename": "1.docx",
+  "bytes": 1160092,
+  "created_at": 1749488385,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\2.docx"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-BZ6eUFduEfAQm4Nj8qNWDB",
+  "purpose": "assistants",
+  "filename": "2.docx",
+  "bytes": 141415,
+  "created_at": 1749488425,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\3.docx"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-CsviP5uwrQrNftPHheCTwz",
+  "purpose": "assistants",
+  "filename": "3.docx",
+  "bytes": 253435,
+  "created_at": 1749488445,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\4.docx"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-2RsHApc5XUBaU8ViiXV9f2",
+  "purpose": "assistants",
+  "filename": "4.docx",
+  "bytes": 17760,
+  "created_at": 1749488460,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\1.pdf"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-UBuhfJGuKz2FP5CGYVaxZ3",
+  "purpose": "assistants",
+  "filename": "1.pdf",
+  "bytes": 306057,
+  "created_at": 1749493317,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\2.pdf"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-2DhFpmmptFfSgQdeN7emuu",
+  "purpose": "assistants",
+  "filename": "2.pdf",
+  "bytes": 1347521,
+  "created_at": 1749493375,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+curl https://api.openai.com/v1/files ^
+ -H "Authorization: Bearer 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" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -F purpose="assistants" ^
+ -F file="@\"C:\Users\PC\Downloads\3.pdf"" ^
+ --ssl-no-revoke
+
+{
+  "object": "file",
+  "id": "file-4f7CKN8QDa2qrVWYWvsmqp",
+  "purpose": "assistants",
+  "filename": "3.pdf",
+  "bytes": 616899,
+  "created_at": 1749493395,
+  "expires_at": null,
+  "status": "processed",
+  "status_details": null
+}
+
+curl https://api.openai.com/v1/assistants/asst_ZRPcnjQrPo38gbph1YHXDknt/files ^
+ -X POST ^
+ -H "Authorization: Bearer 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" ^
+ -H "Content-Type: application/json" ^
+ -H "OpenAI-Beta: assistants=v2" ^
+ -d "{\"file_id\":\"file-Qpo1C7bghFKXPC3P5EMDNC\"}" ^
+ --ssl-no-revoke
