@@ -1,0 +1,25 @@
+{
+  "name": "Trợ lý MSB",
+  "instructions": "Bạn là trợ lý AI của ngân hàng MSB. Luôn ưu tiên trả lời dựa trên tài liệu đã tải lên. Không tìm được thì tìm trên Internet",
+  "model": "gpt-4o-mini",
+  "tools": [
+    {
+      "type": "file_search",
+      "file_search": {
+        "ranking_options": {
+          "ranker": "default_2024_08_21",
+          "score_threshold": 0.0
+        }
+      }
+    }
+  ],
+  "top_p": 1.0,
+  "temperature": 1.0,
+  "response_format": "auto",
+  "tool_resources": {
+    "file_search": {
+      "vector_store_ids": []
+    }
+  },
+  "metadata": {}
+}
