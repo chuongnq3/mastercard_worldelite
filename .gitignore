@@ -1,0 +1,8 @@
+# Bỏ qua file môi trường chứa key bí mật
+.env
+
+# Bỏ qua log, cache và file hệ thống
+*.log
+*.cache
+.DS_Store
+Thumbs.db
