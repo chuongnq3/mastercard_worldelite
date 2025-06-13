@@ -860,7 +860,6 @@ strong {
   max-width: 500px;
   width: 100%;
   margin-top: 60px;
-
   margin-left: auto; /* ✅ Đẩy form sang phải trong container */
 }
 
@@ -1420,7 +1419,6 @@ strong {
   font-size: 18px;
   text-align: left;
    margin-top: 40px;
-
 }
 
 
@@ -1664,4 +1662,163 @@ strong {
   margin: auto;
   top: 2px;
   bottom: 0;
+}
+
+/* Card tổng thể */
+/* === Bố cục hàng ngang: video & card cao bằng nhau === */
+/* === Đảm bảo hai cột cao bằng nhau === */
+.row.align-items-stretch > [class*="col-"] {
+  display: flex;
+}
+
+/* === Card tổng thể === */
+.step-carousel {
+  background-color: #b88657;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  flex: 1;
+}
+
+/* === Header cố định === */
+.card-header {
+  margin-bottom: 24px;
+}
+
+.card-header em {
+  font-size: 18px;       /* tăng size */
+  color: #ffffff;
+  opacity: 0.95;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card-header h2 {
+  font-size: 36px;       /* tăng size */
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* === Wrapper chứa các bước chuyển === */
+.step-content {
+  flex-grow: 1;
+  position: relative;
+}
+
+/* === Các bước hiển thị nội dung === */
+.step-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.6s ease-in-out;
+  z-index: 0;
+}
+
+.step-card.fly-in {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.step-card.fly-out {
+  opacity: 0;
+  transform: translateX(0); /* biến mất tại chỗ */
+  z-index: 1;
+}
+
+/* === Nội dung từng bước === */
+.step-card h4 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.step-card p,
+.step-card li {
+  font-size: 20px;
+  line-height: 1.75;
+  color: #ffffff;
+}
+
+.step-card ul {
+  padding-left: 24px;
+  margin: 0;
+  list-style: disc;
+  color: #ffffff;
+}
+
+.step-card ul li::marker {
+  color: #ffffff;
+}
+
+/* === Video bên phải === */
+.custom-video-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.custom-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 578px) {
+  /* Giải quyết tràn nội dung lên video */
+  .step-card {
+    position: relative !important;
+    opacity: 1 !important;
+    transform: none !important;
+    z-index: auto !important;
+  }
+
+  .step-content {
+    position: relative;
+  }
+
+  /* Vô hiệu hóa hiệu ứng chuyển cảnh trên mobile */
+  .step-card.fly-in,
+  .step-card.fly-out {
+    all: unset;
+  }
+
+  /* Khoảng cách card và video */
+  .row.align-items-stretch > [class*="col-"] {
+    margin-bottom: 24px;
+  }
+
+  /* Giữ padding nội dung gọn */
+  .step-carousel {
+    padding: 20px;
+  }
+
+  /* Tối ưu video trên mobile */
+  .custom-video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .custom-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
